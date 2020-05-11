@@ -1,0 +1,20 @@
+<h1>Welcome to The Longest Word !</h1>
+<div class="letters">
+<ul list-inline>
+  <% @letters.each do |letter| %>
+  <li><%= letter %></li>
+  <% end %>
+</ul>
+</div>
+
+<form action="score">
+  <div class="question">
+    <label>Give it your best shot...</label>
+  </div>
+  <div class="input">
+    <input type="hidden" name="start_time" value="<%= Time.now.to_time.to_i %>">
+    <input type="text" name="answer">
+    <input type="submit" value="Go!">
+    <input type="hidden" name="sample" value="<%= @letters.join %>">
+  </div>
+</form>
